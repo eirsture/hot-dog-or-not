@@ -4,7 +4,6 @@ import './Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faHeart, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
-import logo from '../logo.svg';
 
 function Card() {
   const [dogImage, setDogImage] = useState();
