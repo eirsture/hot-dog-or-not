@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import { defaultAnalytics } from '../firebase';
 import './Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faHeart, faSpinner } from '@fortawesome/free-solid-svg-icons'
@@ -11,11 +12,14 @@ function Card() {
 
   const refCard = useRef(null);
   const fetchRandomDog = async () => {
+    let imageParam = null
     const result = await axios('https://dog.ceo/api/breeds/image/random');
     if (result.data.status === 'success') {
       setDogImage(result.data.message);
+      imageParam = result.data.message 
       return result.data.message;
     }
+    defaultAnalytics.logEvent('fetch_random_dog', {status: result.data.status, image: imageParam});
   };
 
   useEffect(() => {

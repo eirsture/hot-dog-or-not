@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Components/Card';
+import Card from './Card';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHotdog, faDog, faHeartBroken } from '@fortawesome/free-solid-svg-icons'
@@ -26,7 +26,7 @@ function App() {
                   <h3>Could not find any dogs you have liked</h3>
                   <div><FontAwesomeIcon className="red" icon={faHeartBroken} size="5x"/></div></div>)
       } else {
-      return (<div onClick={clearStorage} className="imageList">{dogList.map((dog, i) => {
+      return (<div className="imageList">{dogList.map((dog, i) => {
         return <img alt="dog" key={i} src={dog} />
       })}</div>);
     }}
