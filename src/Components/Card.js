@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import { defaultAnalytics } from '../firebase';
+import firebase from '../firebase';
 import './Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faHeart, faSpinner } from '@fortawesome/free-solid-svg-icons'
@@ -19,7 +19,7 @@ function Card() {
       imageParam = result.data.message 
       return result.data.message;
     }
-    defaultAnalytics.logEvent('fetch_random_dog', {status: result.data.status, image: imageParam});
+    firebase.logEvent('fetch_random_dog', {status: result.data.status, image: imageParam});
   };
 
   useEffect(() => {
