@@ -88,8 +88,8 @@ function Card() {
       )}
       </div>
       <div className='Buttons'>
-        <FontAwesomeIcon className="Button cyan" onClick={handleLeft} icon={faTimes} size="2x" />
-        <FontAwesomeIcon className="Button red" onClick={handleRight} icon={faHeart} size="2x" />
+        <FontAwesomeIcon className="Button red" onClick={handleLeft} icon={faTimes} size="2x" />
+        <FontAwesomeIcon className="Button cyan" onClick={handleRight} icon={faHeart} size="2x" />
       </div>
     </div>
   );

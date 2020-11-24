@@ -1,5 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/analytics'
+import 'firebase/performance'
+
 
 // Web app's Firebase configuration
 var firebaseConfig = {
@@ -15,5 +17,6 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+firebase.performance();
 
 export default firebase

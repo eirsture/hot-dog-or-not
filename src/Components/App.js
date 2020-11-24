@@ -34,7 +34,7 @@ function App() {
     <div className='App'>
       <div className='Header'>
       <FontAwesomeIcon className={`Button cyan ${selected(!renderCard)}`} icon={faHotdog} size="2x" onClick={() => setRenderCard(false)} />
-      <FontAwesomeIcon className={`Button red ${selected(renderCard)}`} icon={faDog} size="2x" onClick={() => setRenderCard(true)}/>
+      <FontAwesomeIcon className={`Button cyan ${selected(renderCard)}`} icon={faDog} size="2x" onClick={() => setRenderCard(true)}/>
       </div>
       {renderContent(likedDogs)}
     </div>
