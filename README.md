@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ea6b5dfb-5d95-4f94-a24a-ae775d1128d0/deploy-status)](https://app.netlify.com/sites/competent-tesla-6d560f/deploys)
+
+https://competent-tesla-6d560f.netlify.app/
 
 ## Available Scripts
 
