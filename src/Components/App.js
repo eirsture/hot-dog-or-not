@@ -13,10 +13,6 @@ function App() {
     setLikedDogs(dogList);
   }, [renderCard]);
 
-  const clearStorage = () => {
-    sessionStorage.removeItem('dogs');
-  }
-
   const renderContent = (dogList) => {
     if (renderCard) {
       return <Card className='Card'/>
