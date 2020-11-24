@@ -21,7 +21,6 @@
 
   background-color: #2b2e36;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .imageList {
@@ -40,4 +39,8 @@
   max-width: 300px;
   width: 100%;
   height: auto;
+}
+
+.infoText {
+  color: #2b2e36;
 }

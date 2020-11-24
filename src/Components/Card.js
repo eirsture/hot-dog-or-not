@@ -9,7 +9,7 @@ function Card() {
   const [dogImage, setDogImage] = useState();
   const [initialMouseX, setInitialMouseX] = useState();
 
-  const refTest = useRef(null);
+  const refCard = useRef(null);
   const fetchRandomDog = async () => {
     const result = await axios('https://dog.ceo/api/breeds/image/random');
     if (result.data.status === 'success') {
@@ -21,8 +21,8 @@ function Card() {
   useEffect(() => {
     fetchRandomDog();
     document.onanimationend = () => {
-      refTest.current.classList.remove('right-trigger');
-      refTest.current.classList.remove('left-trigger');
+      refCard.current.classList.remove('right-trigger');
+      refCard.current.classList.remove('left-trigger');
     };
   }, []);
 
@@ -53,12 +53,12 @@ function Card() {
   };
 
   const handleLeft = async () => {
-    refTest.current.classList.add('left-trigger');
+    refCard.current.classList.add('left-trigger');
     await fetchRandomDog();
   };
 
   const handleRight = async () => {
-    refTest.current.classList.add('right-trigger');
+    refCard.current.classList.add('right-trigger');
     const dogList = JSON.parse(sessionStorage.getItem('dogs')) || [];
     dogList.push(dogImage);
     sessionStorage.setItem('dogs', JSON.stringify(dogList));
@@ -68,7 +68,7 @@ function Card() {
   return (
     <div
       className='Card'
-      ref={refTest}
+      ref={refCard}
       onMouseDown={handleTouchStart}
       onTouchStart={handleTouchStart}
       onTouchEnd={(event) =>
@@ -84,8 +84,8 @@ function Card() {
       )}
       </div>
       <div className='Buttons'>
-        <FontAwesomeIcon className="Button cross" onClick={handleLeft} icon={faTimes} size="2x" />
-        <FontAwesomeIcon className="Button heart" onClick={handleRight} icon={faHeart} size="2x" />
+        <FontAwesomeIcon className="Button cyan" onClick={handleLeft} icon={faTimes} size="2x" />
+        <FontAwesomeIcon className="Button red" onClick={handleRight} icon={faHeart} size="2x" />
       </div>
     </div>
   );
